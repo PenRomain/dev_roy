@@ -1,0 +1,18 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  color: #111111;
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: 0;
+}
+
+.inverted {
+  color: var(--c-white);
+}
+
+.footerText {
+  font-size: 32px;
+  line-height: 36px;
+  font-weight: 700;
+}

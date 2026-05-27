@@ -1,0 +1,51 @@
+.lightHoneycomb {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.lightHoneycomb::before {
+  position: absolute;
+  inset-block: 0;
+  left: 50%;
+  z-index: -1;
+  width: 100vw;
+  background-image: var(--honeycomb-figma-union);
+  background-position: center top;
+  background-repeat: repeat-y;
+  background-size: var(--honeycomb-union-size);
+  content: '';
+  opacity: 0.13;
+  pointer-events: none;
+  mix-blend-mode: color-burn;
+  transform: translateX(-50%);
+}
+
+.bottomHoneycomb {
+  position: relative;
+  background: var(--c-soft);
+  isolation: isolate;
+}
+
+.bottomHoneycomb::before {
+  position: absolute;
+  top: -220px;
+  bottom: 0;
+  left: 50%;
+  z-index: 0;
+  width: 100vw;
+  background-image: var(--honeycomb-figma-union);
+  background-position: center top;
+  background-repeat: repeat-y;
+  background-size: var(--honeycomb-union-size);
+  content: '';
+  mask-image: linear-gradient(to bottom, transparent 0, #000000 18%, #000000 84%, transparent 100%);
+  opacity: 0.065;
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
+.bottomHoneycomb > * {
+  position: relative;
+  z-index: 1;
+}

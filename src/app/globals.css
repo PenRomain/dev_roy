@@ -1,0 +1,109 @@
+:root {
+  --c-text: #252525;
+  --c-soft: #f4f4f4;
+  --c-line: #d9d9d9;
+  --c-orange: #e85002;
+  --c-peach: #f8dfd1;
+  --c-black: #222222;
+  --c-white: #f9f9f9;
+  --page-width: 1920px;
+  --page-padding: 12px;
+  --content-width: calc(var(--page-width) - (var(--page-padding) + var(--page-padding)));
+  --content-shell-width: calc(100vw - (var(--page-padding) + var(--page-padding)));
+  --content-shell-max-width: var(--content-width);
+  --section-block-start: 36px;
+  --section-block-end: 54px;
+  --section-column-gap: 34px;
+  --section-row-gap: 28px;
+  --section-heading-gap: 28px;
+  --section-label-gap: 22px;
+  --grid-card-gap: 14px;
+  --card-radius: 12px;
+  --br-xl: 25px;
+  --pill-radius: 999px;
+  --card-padding-inline: 22px;
+  --list-row-padding: 22px 0;
+  --honeycomb-union-size: max(1920px, 100vw) auto;
+  --honeycomb-hero-size: auto max(100%, 436px);
+  --honeycomb-figma-union: url('/patterns/figma-honeycomb-union.svg');
+  --honeycomb-figma-hero: url('/patterns/figma-honeycomb-hero.svg');
+}
+
+@media (min-width: 480px) {
+  :root {
+    --page-padding: 18px;
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --page-padding: 32px;
+    --section-block-start: 42px;
+    --section-block-end: 60px;
+    --section-row-gap: 34px;
+    --section-heading-gap: 52px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --section-block-start: 52px;
+    --section-block-end: 70px;
+    --card-padding-inline: 32px;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --page-padding: 52px;
+    --honeycomb-hero-size: 100% auto;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow-x: clip;
+  background-color: var(--c-soft);
+  color: var(--c-text);
+  font-family:
+    HelveticaNeueCyr,
+    'Helvetica Neue',
+    Helvetica,
+    Arial,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
+  font-weight: 400;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--c-orange);
+  color: var(--c-white);
+}

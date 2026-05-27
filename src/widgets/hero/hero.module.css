@@ -1,0 +1,105 @@
+.hero {
+  position: relative;
+  display: grid;
+  width: var(--content-shell-width);
+  max-width: var(--content-shell-max-width);
+  min-height: 430px;
+  align-content: center;
+  justify-items: center;
+  gap: 44px;
+  overflow: hidden;
+  border-radius: 25px;
+  margin: 22px auto 0;
+  padding: 78px 18px 52px;
+  background:
+    radial-gradient(ellipse 760px 420px at 12% 34%, rgba(255, 219, 132, 0.9), transparent 62%),
+    radial-gradient(ellipse 920px 440px at 62% 4%, rgba(255, 30, 0, 0.82), transparent 70%),
+    linear-gradient(112deg, #ffd178 0%, #ff7a22 31%, #ff210f 61%, #f0172c 77%, #ffbd98 100%);
+  color: var(--c-white);
+  text-align: center;
+}
+
+.hero::before,
+.hero::after {
+  position: absolute;
+  inset: 0;
+  content: '';
+}
+
+.hero::before {
+  background-image: var(--honeycomb-figma-hero);
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: var(--honeycomb-hero-size);
+  filter: brightness(1.6) contrast(1.06);
+  mix-blend-mode: screen;
+  opacity: 0.24;
+}
+
+.hero::after {
+  inset: auto 0 0;
+  height: 46%;
+  background: linear-gradient(180deg, transparent 0%, rgba(255, 184, 148, 0.82) 100%);
+  mask-image: none;
+}
+
+.header,
+.badge {
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  width: 100%;
+  max-width: 1210px;
+  min-width: 0;
+  margin: 0 auto;
+
+  font-weight: 700;
+  font-size: clamp(28px, 7.8vw, 34px);
+  line-height: 1.08;
+  letter-spacing: 0;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.badge {
+  display: inline-flex;
+  width: 100%;
+  max-width: 680px;
+  min-height: 52px;
+  min-width: 0;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--c-white);
+  border-radius: 25px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0;
+  padding: 14px 24px;
+  text-align: center;
+  text-wrap: balance;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    min-height: 436px;
+    gap: 52px;
+    margin-top: 52px;
+    padding: 84px 32px 80px;
+  }
+
+  .header {
+    width: auto;
+    font-size: 52px;
+    line-height: 56px;
+  }
+
+  .badge {
+    max-width: none;
+    width: max-content;
+    font-size: 18px;
+    padding-inline: 32px;
+  }
+}
