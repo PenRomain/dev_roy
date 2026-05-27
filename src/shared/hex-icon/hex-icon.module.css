@@ -5,6 +5,7 @@
   height: 100px;
   place-items: center;
   color: var(--c-orange);
+  transition: transform var(--motion-medium) var(--motion-spring-ease);
 }
 
 .border {
@@ -16,6 +17,9 @@
   stroke: var(--c-orange);
   stroke-width: 1.6;
   stroke-linejoin: round;
+  transition:
+    fill var(--motion-medium) var(--motion-ease-out),
+    stroke var(--motion-medium) var(--motion-ease-out);
 }
 
 .content {

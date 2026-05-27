@@ -16,6 +16,7 @@
   content: '';
   mix-blend-mode: multiply;
   opacity: 0.42;
+  animation: honeycombDrift 54s linear infinite;
 }
 
 .grid,
@@ -51,7 +52,17 @@
     color: var(--c-black);
     width: 52px;
     height: 52px;
+    transition:
+      background var(--motion-medium) var(--motion-ease-out),
+      color var(--motion-medium) var(--motion-ease-out),
+      transform var(--motion-medium) var(--motion-spring-ease);
   }
+}
+
+.socials .social:hover {
+  background: var(--c-orange);
+  color: var(--c-white);
+  transform: translateY(-4px) rotate(4deg);
 }
 
 .footer h2 {

@@ -12,18 +12,57 @@
   font-size: 14px;
   font-weight: 500;
   line-height: 1;
+  overflow: hidden;
+  position: relative;
   transition:
     background 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
     color 180ms ease,
     transform 180ms ease;
 }
 
+.button::before {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.34) 48%,
+    transparent 100%
+  );
+  content: '';
+  opacity: 0;
+  transform: translateX(-70%) skewX(-18deg);
+  transition:
+    opacity var(--motion-medium) var(--motion-ease-out),
+    transform var(--motion-medium) var(--motion-ease-out);
+}
+
 .button span {
+  position: relative;
+  z-index: 1;
   min-width: 0;
 }
 
+.button svg {
+  position: relative;
+  z-index: 1;
+  transition: transform var(--motion-medium) var(--motion-spring-ease);
+}
+
 .button:hover {
+  box-shadow: 0 14px 32px rgba(232, 80, 2, 0.22);
   transform: translateY(-1px);
+}
+
+.button:hover::before {
+  opacity: 1;
+  transform: translateX(70%) skewX(-18deg);
+}
+
+.button:hover svg {
+  transform: translate3d(3px, -3px, 0);
 }
 
 .solid {

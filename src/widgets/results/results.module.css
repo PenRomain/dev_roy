@@ -46,6 +46,14 @@
   border: 1px solid var(--c-orange);
   border-radius: var(--br-xl);
   background: var(--c-peach);
+  transition:
+    border-color var(--motion-medium) var(--motion-ease-out),
+    background var(--motion-medium) var(--motion-ease-out);
+}
+
+.card:hover {
+  border-color: var(--c-black);
+  background: var(--c-orange);
 }
 
 .cardContent {
@@ -95,6 +103,11 @@
   height: auto;
   overflow: hidden;
   object-fit: contain;
+  transition: transform var(--motion-medium) var(--motion-spring-ease);
+}
+
+.card:hover .avatar {
+  transform: rotate(4deg) scale(1.08);
 }
 
 .salary {
@@ -116,6 +129,14 @@
   text-decoration: underline;
   font-size: 22px;
   font-weight: 400;
+  transition:
+    background var(--motion-medium) var(--motion-ease-out),
+    color var(--motion-medium) var(--motion-ease-out);
+}
+
+.link:hover {
+  background: var(--c-orange);
+  color: var(--c-white);
 }
 
 .all {

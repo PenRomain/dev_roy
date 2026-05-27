@@ -14,7 +14,7 @@ const facts = [
 export function Trust() {
   return (
     <section className={styles.section}>
-      <div className={styles.label}>
+      <div className={styles.label} data-motion-reveal="up">
         <div>
           <SectionLabel>доверие</SectionLabel>
         </div>
@@ -22,7 +22,7 @@ export function Trust() {
       </div>
 
       <div className={styles.grid}>
-        <figure className={styles.person}>
+        <figure className={styles.person} data-motion-reveal="left" data-pointer-card="true">
           <Image
             className={styles.stage}
             src="/images/daniil-stage.png"
@@ -37,27 +37,42 @@ export function Trust() {
         </figure>
         <div className={styles.content}>
           <div className={styles.metrics}>
-            <div className={styles.metric}>
+            <div
+              className={styles.metric}
+              data-motion-delay="1"
+              data-motion-reveal="zoom"
+              data-pointer-card="true"
+            >
               <strong>6</strong>
               <span>лет в IT</span>
             </div>
-            <div className={styles.metric}>
+            <div
+              className={styles.metric}
+              data-motion-delay="2"
+              data-motion-reveal="zoom"
+              data-pointer-card="true"
+            >
               <strong>20+</strong>
               <span>трудоустроенных учеников</span>
             </div>
-            <div className={`${styles.metric} ${styles.hot}`}>
+            <div
+              className={`${styles.metric} ${styles.hot}`}
+              data-motion-delay="3"
+              data-motion-reveal="zoom"
+              data-pointer-card="true"
+            >
               <strong>400к+</strong>
               <span>зарплата</span>
             </div>
           </div>
           <ol className={styles.facts}>
             {facts.map((fact, index) => (
-              <li key={fact}>
+              <li data-motion-delay={index + 1} data-motion-reveal="up" key={fact}>
                 <span>0{index + 1}</span>
                 {fact}
               </li>
             ))}
-            <div className={styles.links}>
+            <div className={styles.links} data-motion-reveal="up">
               <a href={`#${anchors.results}`}>
                 Смотри записи моих собесов
                 <div className={styles.arrow}>

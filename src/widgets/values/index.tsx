@@ -32,18 +32,26 @@ const items = [
 export function Values() {
   return (
     <section className={styles.section}>
-      <div className={styles.label}>
+      <div className={styles.label} data-motion-reveal="left">
         <SectionLabel>ценности</SectionLabel>
       </div>
       <div className={styles.inner}>
-        <h2 className={styles.title}>Три простых этапа для роста в карьере</h2>
-        <p className={styles.lead}>
+        <h2 className={styles.title} data-motion-reveal="up">
+          Три простых этапа для роста в карьере
+        </h2>
+        <p className={styles.lead} data-motion-delay="1" data-motion-reveal="up">
           «ДЕВ РОЙ» - пространство, где результат важнее маркетинга, качество - выше масштаба,
           человек - ценнее воронки.
         </p>
         <div className={styles.grid}>
-          {items.map((item) => (
-            <article className={styles.card} key={item.title}>
+          {items.map((item, index) => (
+            <article
+              className={styles.card}
+              data-motion-delay={index + 1}
+              data-motion-reveal="up"
+              data-pointer-card="true"
+              key={item.title}
+            >
               <HexIcon className={styles.icon}>
                 <Image src={item.iconSrc} alt="" width={item.iconWidth} height={item.iconHeight} />
               </HexIcon>
@@ -53,7 +61,13 @@ export function Values() {
               </div>
             </article>
           ))}
-          <Button className={styles.bigButton} href={`#${anchors.pricing}`}>
+          <Button
+            className={styles.bigButton}
+            data-motion-reveal="up"
+            href={`#${anchors.pricing}`}
+            data-motion-delay="4"
+            data-pointer-card="true"
+          >
             Обсудить обучение
           </Button>
         </div>

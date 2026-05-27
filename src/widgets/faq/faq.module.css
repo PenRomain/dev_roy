@@ -33,10 +33,18 @@
 .item {
   border-top: 1px solid var(--c-line);
   padding: var(--list-row-padding);
+  transition:
+    border-color var(--motion-medium) var(--motion-ease-out),
+    padding-inline var(--motion-medium) var(--motion-ease-out);
 }
 
 .item[data-open='true'] {
   border-top-color: var(--c-orange);
+}
+
+.item:hover {
+  border-top-color: var(--c-orange);
+  padding-inline: 18px;
 }
 
 .question {
@@ -75,10 +83,12 @@
   cursor: pointer;
   transition:
     background 180ms ease,
+    color 180ms ease,
     transform 180ms ease;
 }
 
 .question .answerButton:hover {
+  background: var(--c-black);
   transform: translateY(-1px);
 }
 
@@ -88,6 +98,7 @@
   padding-left: 50px;
   font-size: 18px;
   line-height: 1.22;
+  overflow: hidden;
 }
 
 @media (min-width: 1024px) {

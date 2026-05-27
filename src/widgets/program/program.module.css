@@ -20,6 +20,7 @@
     filter: sepia(1) saturate(7) hue-rotate(334deg) brightness(0.64);
     mix-blend-mode: screen;
     opacity: 0.36;
+    animation: honeycombDrift 48s linear infinite reverse;
   }
 
   & .title {
@@ -70,6 +71,15 @@
   background: var(--c-peach);
   color: var(--c-text);
   padding: 22px;
+  transition:
+    border-color var(--motion-medium) var(--motion-ease-out),
+    background var(--motion-medium) var(--motion-ease-out),
+    color var(--motion-medium) var(--motion-ease-out);
+}
+
+.step:hover {
+  border-color: var(--c-white);
+  background: var(--c-white);
 }
 
 .step[data-side='right'] {

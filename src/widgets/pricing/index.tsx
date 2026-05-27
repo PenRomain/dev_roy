@@ -7,13 +7,20 @@ import styles from './pricing.module.css';
 export function Pricing() {
   return (
     <section className={styles.section} id={anchors.pricing}>
-      <div className={styles.heading}>
+      <div className={styles.heading} data-motion-reveal="up">
         <h2>Как попасть на обучение</h2>
         <p>Карьера в IT - это система, а не удача. Начинайте сейчас.</p>
       </div>
       <div className={styles.grid}>
-        {tariffs.map((tariff) => (
-          <article className={styles.card} data-featured={tariff.featured} key={tariff.title}>
+        {tariffs.map((tariff, index) => (
+          <article
+            className={styles.card}
+            data-featured={tariff.featured}
+            data-motion-delay={index + 1}
+            data-motion-reveal="up"
+            data-pointer-card="true"
+            key={tariff.title}
+          >
             {tariff.marker ? <span className={styles.marker}>{tariff.marker}</span> : null}
             <h3>{tariff.title}</h3>
             <div className={styles.body}>
@@ -47,7 +54,7 @@ export function Pricing() {
           </article>
         ))}
       </div>
-      <div className={styles.note}>
+      <div className={styles.note} data-motion-reveal="right">
         <Info aria-hidden="true" size={18} />
         <span>Выплату % от зарплаты можно разбить на 3 месяца</span>
       </div>

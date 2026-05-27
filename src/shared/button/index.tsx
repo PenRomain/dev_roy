@@ -1,11 +1,15 @@
+'use client';
+
 import clsx from 'clsx';
 import { ArrowUpRight } from 'lucide-react';
+import { motion } from 'motion/react';
+import type { HTMLMotionProps } from 'motion/react';
 import type { ReactNode } from 'react';
 import styles from './button.module.css';
 
 type ButtonVariant = 'solid' | 'outline' | 'ghost';
 
-type ButtonProps = {
+type ButtonProps = Omit<HTMLMotionProps<'a'>, 'children' | 'href'> & {
   children: ReactNode;
   href: string;
   variant?: ButtonVariant;
@@ -19,11 +23,19 @@ export function Button({
   variant = 'solid',
   className,
   endAdornment = <ArrowUpRight aria-hidden="true" size={24} strokeWidth={2} />,
+  ...rest
 }: ButtonProps) {
   return (
-    <a className={clsx(styles.button, styles[variant], className)} href={href}>
+    <motion.a
+      className={clsx(styles.button, styles[variant], className)}
+      href={href}
+      whileHover={{ scale: 1.025, y: -3 }}
+      whileTap={{ scale: 0.97 }}
+      transition={{ damping: 26, stiffness: 460, type: 'spring' }}
+      {...rest}
+    >
       <span>{children}</span>
       {endAdornment}
-    </a>
+    </motion.a>
   );
 }

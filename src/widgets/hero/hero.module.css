@@ -17,6 +17,7 @@
     linear-gradient(112deg, #ffd178 0%, #ff7a22 31%, #ff210f 61%, #f0172c 77%, #ffbd98 100%);
   color: var(--c-white);
   text-align: center;
+  animation: softPulse 9s ease-in-out infinite;
 }
 
 .hero::before,
@@ -34,6 +35,9 @@
   filter: brightness(1.6) contrast(1.06);
   mix-blend-mode: screen;
   opacity: 0.24;
+  animation:
+    honeycombDrift 42s linear infinite,
+    honeycombGlow 7s ease-in-out infinite;
 }
 
 .hero::after {
@@ -80,6 +84,7 @@
   padding: 14px 24px;
   text-align: center;
   text-wrap: balance;
+  backdrop-filter: blur(8px);
 }
 
 @media (min-width: 768px) {

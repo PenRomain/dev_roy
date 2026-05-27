@@ -31,6 +31,8 @@
   background: transparent;
   max-width: none;
   position: relative;
+  overflow: hidden;
+  border-radius: var(--br-xl);
 
   & figcaption {
     position: absolute;
@@ -43,6 +45,9 @@
     padding: 18px;
     width: 100%;
     bottom: 0;
+    transition:
+      background var(--motion-medium) var(--motion-ease-out),
+      color var(--motion-medium) var(--motion-ease-out);
   }
 
   & strong {
@@ -64,6 +69,16 @@
   height: auto;
   object-fit: cover;
   object-position: top center;
+  transition: transform 900ms var(--motion-ease-out);
+}
+
+.person:hover .stage {
+  transform: scale(1.035);
+}
+
+.person:hover figcaption {
+  background: var(--c-orange);
+  color: var(--c-white);
 }
 
 .content {
@@ -115,6 +130,7 @@
   border: 0;
   color: var(--c-orange);
   text-align: center;
+  transition: color var(--motion-medium) var(--motion-ease-out);
 }
 
 .metric::before {
@@ -126,6 +142,14 @@
   background-repeat: no-repeat;
   background-size: 100% 100%;
   content: '';
+  transition:
+    filter var(--motion-medium) var(--motion-ease-out),
+    transform var(--motion-medium) var(--motion-spring-ease);
+}
+
+.metric:hover::before {
+  filter: drop-shadow(0 22px 42px rgba(232, 80, 2, 0.24));
+  transform: rotate(3deg) scale(1.03);
 }
 
 .hot {
@@ -152,12 +176,22 @@
     font-size: 22px;
     line-height: 26px;
     font-weight: 400;
+    transition:
+      border-color var(--motion-medium) var(--motion-ease-out),
+      color var(--motion-medium) var(--motion-ease-out),
+      transform var(--motion-medium) var(--motion-ease-out);
   }
 
   & span {
     color: var(--c-orange);
     font-weight: 700;
   }
+}
+
+.facts li:hover {
+  border-top-color: var(--c-orange);
+  color: var(--c-black);
+  transform: translateX(10px);
 }
 
 .arrow {
@@ -192,8 +226,13 @@
 
     & svg {
       color: var(--c-orange);
+      transition: transform var(--motion-medium) var(--motion-spring-ease);
     }
   }
+}
+
+.links > a:first-child:hover svg {
+  transform: translateX(6px);
 }
 
 @media (min-width: 768px) {

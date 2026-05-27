@@ -5,7 +5,7 @@ import styles from './problems.module.css';
 export function Problems() {
   return (
     <section className={styles.section}>
-      <div className={styles.side}>
+      <div className={styles.side} data-motion-reveal="left">
         <SectionLabel>проблематика</SectionLabel>
         <div className={styles.bottom}>
           <p>
@@ -16,10 +16,18 @@ export function Problems() {
         </div>
       </div>
       <div className={styles.content}>
-        <h2 className={styles.heading}>Пора сменить карьерную стратегию, если:</h2>
+        <h2 className={styles.heading} data-motion-reveal="up">
+          Пора сменить карьерную стратегию, если:
+        </h2>
         <div className={styles.list}>
-          {problems.map((problem) => (
-            <article className={styles.row} key={problem.id}>
+          {problems.map((problem, index) => (
+            <article
+              className={styles.row}
+              data-motion-delay={index + 1}
+              data-motion-reveal={index % 2 === 0 ? 'right' : 'left'}
+              data-pointer-card="true"
+              key={problem.id}
+            >
               <span className={styles.number}>{problem.id}</span>
               <h3 className={styles.title}>{problem.title}</h3>
               <p className={styles.description}>{problem.description}</p>

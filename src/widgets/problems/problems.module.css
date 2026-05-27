@@ -48,10 +48,18 @@
   grid-template-columns: 40px 1fr;
   gap: 26px;
   padding: 32px 0 52px 0;
+  transition:
+    border-color var(--motion-medium) var(--motion-ease-out),
+    padding-inline var(--motion-medium) var(--motion-ease-out);
 
   &:not(:nth-child(1)) {
     border-top: 1px solid var(--c-line);
   }
+}
+
+.row:hover {
+  border-top-color: var(--c-orange);
+  padding-inline: 18px;
 }
 
 .description {
@@ -63,6 +71,11 @@
   font-size: 22px;
   line-height: 26px;
   font-weight: 700;
+  transition: transform var(--motion-medium) var(--motion-spring-ease);
+}
+
+.row:hover .number {
+  transform: scale(1.18);
 }
 
 .title,

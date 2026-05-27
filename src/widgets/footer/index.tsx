@@ -6,7 +6,7 @@ export function Footer() {
   return (
     <footer className={styles.footer} id="contact">
       <div className={styles.grid}>
-        <div className={styles.brand}>
+        <div className={styles.brand} data-motion-reveal="left">
           <Logo inverted />
           <div className={styles.socials}>
             <a className={styles.social} aria-label="Email" href="mailto:iwant@therealdaniil.ru">
@@ -17,12 +17,12 @@ export function Footer() {
             </a>
           </div>
         </div>
-        <div>
+        <div data-motion-delay="1" data-motion-reveal="up">
           <h2 className={styles.title}>Контакты</h2>
           <p className={styles.contact}>Email: iwant@therealdaniil.ru</p>
           <p className={styles.contact}>Telegram: @the_real_daniil</p>
         </div>
-        <div>
+        <div data-motion-delay="2" data-motion-reveal="up">
           <h2 className={styles.title}>Полезное</h2>
           <a className={styles.paragraph} href="#contact">
             Политика конфиденциальности

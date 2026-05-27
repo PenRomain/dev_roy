@@ -9,12 +9,14 @@ import { Program } from '@/widgets/program';
 import { Results } from '@/widgets/results';
 import { Trust } from '@/widgets/trust';
 import { Values } from '@/widgets/values';
+import { AnimationLayer } from '@/shared/animation-layer';
 
 import styles from './home.module.css';
 
 export function HomePage() {
   return (
     <>
+      <AnimationLayer />
       <Header />
       <main>
         <Hero />

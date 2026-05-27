@@ -10,4 +10,14 @@
   font-size: 26px;
   line-height: 28px;
   font-weight: 400;
+  transition:
+    background var(--motion-medium) var(--motion-ease-out),
+    color var(--motion-medium) var(--motion-ease-out),
+    transform var(--motion-medium) var(--motion-spring-ease);
+}
+
+.label:hover {
+  background: var(--c-orange);
+  color: var(--c-white);
+  transform: rotate(-1deg) translateY(-2px);
 }

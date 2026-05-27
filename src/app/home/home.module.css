@@ -19,6 +19,9 @@
   pointer-events: none;
   mix-blend-mode: color-burn;
   transform: translateX(-50%);
+  animation:
+    honeycombFloat 34s ease-in-out infinite alternate,
+    honeycombDrift 52s linear infinite;
 }
 
 .bottomHoneycomb {
@@ -43,6 +46,9 @@
   opacity: 0.065;
   pointer-events: none;
   transform: translateX(-50%);
+  animation:
+    honeycombFloat 38s ease-in-out infinite alternate-reverse,
+    honeycombDrift 58s linear infinite reverse;
 }
 
 .bottomHoneycomb > * {

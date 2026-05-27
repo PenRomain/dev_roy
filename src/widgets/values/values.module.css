@@ -60,6 +60,9 @@
   gap: 22px;
   background: #e7e7ec;
   padding: 22px;
+  transition:
+    background var(--motion-medium) var(--motion-ease-out),
+    color var(--motion-medium) var(--motion-ease-out);
 
   & > div {
     display: flex;
@@ -84,6 +87,18 @@
 .icon {
   color: var(--c-black);
   flex-shrink: 0;
+  transition:
+    color var(--motion-medium) var(--motion-ease-out),
+    transform var(--motion-medium) var(--motion-spring-ease);
+}
+
+.card:hover {
+  background: var(--c-white);
+}
+
+.card:hover .icon {
+  color: var(--c-orange);
+  transform: rotate(8deg) scale(1.06);
 }
 
 .bigButton {

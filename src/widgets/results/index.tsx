@@ -8,7 +8,7 @@ import styles from './results.module.css';
 export function Results() {
   return (
     <section className={styles.section} id={anchors.results}>
-      <div className={styles.header}>
+      <div className={styles.header} data-motion-reveal="up">
         <SectionLabel>итог</SectionLabel>
         <h2>Результаты учеников</h2>
         <p>
@@ -17,8 +17,14 @@ export function Results() {
         </p>
       </div>
       <div className={styles.grid}>
-        {results.map((result) => (
-          <article className={styles.card} key={`${result.avatarSrc}-${result.salary}`}>
+        {results.map((result, index) => (
+          <article
+            className={styles.card}
+            data-motion-delay={index + 1}
+            data-motion-reveal="up"
+            data-pointer-card="true"
+            key={`${result.avatarSrc}-${result.salary}`}
+          >
             <div className={styles.cardContent}>
               <div className={styles.cardHeader}>
                 <div className={styles.title}>
@@ -44,7 +50,7 @@ export function Results() {
           </article>
         ))}
       </div>
-      <Button className={styles.all} href="#contact">
+      <Button className={styles.all} data-motion-reveal="up" href="#contact">
         Все отзывы
       </Button>
     </section>

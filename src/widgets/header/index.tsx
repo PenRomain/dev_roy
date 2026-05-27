@@ -7,11 +7,16 @@ import styles from './header.module.css';
 export function Header() {
   return (
     <header className={styles.header}>
-      <div className={styles.inner}>
+      <div className={styles.inner} data-motion-reveal="down">
         <Logo />
         <nav className={styles.nav} aria-label="Основная навигация">
-          {navItems.map((item) => (
-            <a href={item.href} key={item.href}>
+          {navItems.map((item, index) => (
+            <a
+              data-motion-delay={index + 1}
+              data-motion-reveal="down"
+              href={item.href}
+              key={item.href}
+            >
               {item.label}
             </a>
           ))}
